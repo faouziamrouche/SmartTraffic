@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Smart Traffic</string>
+    <string name="infor_activity_title">Informations du traffic</string>
+</resources>
