@@ -6,29 +6,12 @@
     android:orientation="vertical"
     tools:context=".InfoActivity">
 
-    <RelativeLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/cnx_status"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="connexion au serveur" />
-
-        <TextView
-            android:id="@+id/cnx_status_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_toRightOf="@+id/cnx_status"
-            android:background="@drawable/green_rounded_textview"
-            android:padding="16dp" />
-
-    </RelativeLayout>
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Vous êtes connectés avec le serveur" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:background="@drawable/green_rounded_textview"
+                android:background="@drawable/rounded_textview"
                 android:fontFamily="sans-serif-light"
                 android:padding="56dp"
                 android:text="60"
