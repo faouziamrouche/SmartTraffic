@@ -1,12 +1,8 @@
 package tech.electron.smarttraffic;
 
-import android.annotation.TargetApi;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
@@ -25,7 +21,7 @@ import java.net.URL;
 public class InfoActivity extends AppCompatActivity {
 
     private final String TAG = "Http Connection";
-    private final String url = "http://43cd11f8.ngrok.io/info";
+    private final String url = "http://e9ccb9ed.ngrok.io/info";
 
     private String actual_speed = "";
     private String actual_info = "";
@@ -38,6 +34,7 @@ public class InfoActivity extends AppCompatActivity {
 
         new AsyncHttpTask().execute(url);
     }
+
 
     public class AsyncHttpTask extends AsyncTask<String, Void, Integer> {
 
@@ -75,6 +72,7 @@ public class InfoActivity extends AppCompatActivity {
                     parseResult(response);
 
                     result = 1; // Successful
+
                 } else {
                     result = 0; //"Failed to fetch data!";
                 }
@@ -86,8 +84,6 @@ public class InfoActivity extends AppCompatActivity {
         }
 
 
-        @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         protected void onPostExecute(Integer result) {
             /* Download complete. Lets update UI */
@@ -96,9 +92,7 @@ public class InfoActivity extends AppCompatActivity {
                 ((TextView) findViewById(R.id.speed_text_view)).setText(actual_speed);
                 ((TextView) findViewById(R.id.info_text_view)).setText(actual_info);
 
-                ((TextView) findViewById(R.id.cnx_status_button)).setBackground(getDrawable(R.drawable.green_rounded_textview));
             } else {
-                ((TextView) findViewById(R.id.cnx_status_button)).setBackground(getDrawable(R.drawable.red_rounded_textview));
                 Log.e(TAG, "Failed to fetch data!");
             }
 
@@ -107,7 +101,7 @@ public class InfoActivity extends AppCompatActivity {
                 public void run() {
                     new AsyncHttpTask().execute(url);
                 }
-            }, 1000);
+            }, 5000);
         }
     }
 

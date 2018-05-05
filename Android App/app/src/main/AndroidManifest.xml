@@ -19,10 +19,8 @@
         <activity
             android:name=".InfoActivity"
             android:label="@string/infor_activity_title"></activity>
-
     </application>
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
